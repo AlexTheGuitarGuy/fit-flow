@@ -19,7 +19,9 @@
     "rxjs": "^7.8.0"
   },
   "devDependencies": {
+    "@avro/types": "^1.0.26",
     "@eslint/js": "^9.8.0",
+    "@kafkajs/confluent-schema-registry": "^4.0.8",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.0",
     "@nx/docker": "22.6.4",
@@ -44,6 +46,7 @@
     "jest": "^30.0.2",
     "jest-environment-node": "^30.0.2",
     "jest-util": "^30.0.2",
+    "kafkajs": "^2.2.4",
     "nx": "22.6.4",
     "prettier": "~3.6.2",
     "prisma": "^7.6.0",
