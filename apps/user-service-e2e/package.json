@@ -1,0 +1,26 @@
+{
+  "name": "@fit-flow/user-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@fit-flow/user-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/user-service-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@fit-flow/user-service:build",
+          "@fit-flow/user-service:serve"
+        ]
+      }
+    }
+  }
+}

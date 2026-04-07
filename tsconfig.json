@@ -4,10 +4,34 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/fit-flow-e2e"
+      "path": "./apps/api-gateway-e2e"
     },
     {
-      "path": "./apps/fit-flow"
+      "path": "./apps/api-gateway"
+    },
+    {
+      "path": "./apps/user-service-e2e"
+    },
+    {
+      "path": "./apps/user-service"
+    },
+    {
+      "path": "./apps/workout-service-e2e"
+    },
+    {
+      "path": "./apps/workout-service"
+    },
+    {
+      "path": "./apps/stats-service-e2e"
+    },
+    {
+      "path": "./apps/stats-service"
+    },
+    {
+      "path": "./apps/notification-service-e2e"
+    },
+    {
+      "path": "./apps/notification-service"
     }
   ]
 }
