@@ -1,0 +1,26 @@
+{
+  "name": "@fit-flow/workout-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@fit-flow/workout-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/workout-service-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@fit-flow/workout-service:build",
+          "@fit-flow/workout-service:serve"
+        ]
+      }
+    }
+  }
+}
