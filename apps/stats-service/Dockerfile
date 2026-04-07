@@ -2,12 +2,12 @@
 # Build the docker image with `npx nx docker:build @fit-flow/fit-flow`.
 # Tip: Modify "docker:build" options in project.json to change docker build args.
 #
-# Run the container with `nx docker:run @fit-flow/fit-flow -p 3000:3000`.
+# Run the container with `nx docker:run @fit-flow/fit-flow -p 3002:3002`.
 #
 FROM docker.io/node:lts-alpine
 
 ENV HOST=0.0.0.0
-ENV PORT=3000
+ENV PORT=3002
 
 RUN corepack enable
 
