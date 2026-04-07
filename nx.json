@@ -56,7 +56,8 @@
         "apps/fit-flow-e2e/**/*",
         "apps/api-gateway-e2e/**/*",
         "apps/user-service-e2e/**/*",
-        "apps/workout-service-e2e/**/*"
+        "apps/workout-service-e2e/**/*",
+        "apps/stats-service-e2e/**/*"
       ]
     },
     {

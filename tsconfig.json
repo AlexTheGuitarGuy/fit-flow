@@ -20,6 +20,12 @@
     },
     {
       "path": "./apps/workout-service"
+    },
+    {
+      "path": "./apps/stats-service-e2e"
+    },
+    {
+      "path": "./apps/stats-service"
     }
   ]
 }

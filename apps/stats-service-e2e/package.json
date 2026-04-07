@@ -1,0 +1,26 @@
+{
+  "name": "@fit-flow/stats-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@fit-flow/stats-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/stats-service-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@fit-flow/stats-service:build",
+          "@fit-flow/stats-service:serve"
+        ]
+      }
+    }
+  }
+}
