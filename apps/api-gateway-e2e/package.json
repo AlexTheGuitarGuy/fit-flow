@@ -1,10 +1,10 @@
 {
-  "name": "@fit-flow/fit-flow-e2e",
+  "name": "@fit-flow/api-gateway-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@fit-flow/fit-flow"
+      "@fit-flow/api-gateway"
     ],
     "targets": {
       "e2e": {
@@ -13,12 +13,12 @@
           "{projectRoot}/test-output/jest/coverage"
         ],
         "options": {
-          "jestConfig": "apps/fit-flow-e2e/jest.config.cts",
+          "jestConfig": "apps/api-gateway-e2e/jest.config.cts",
           "passWithNoTests": true
         },
         "dependsOn": [
-          "@fit-flow/fit-flow:build",
-          "@fit-flow/fit-flow:serve"
+          "@fit-flow/api-gateway:build",
+          "@fit-flow/api-gateway:serve"
         ]
       }
     }

@@ -1,5 +1,5 @@
 {
-  "name": "@fit-flow/fit-flow",
+  "name": "@fit-flow/api-gateway",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -11,7 +11,7 @@
           "args": [
             "--node-env=production"
           ],
-          "cwd": "apps/fit-flow"
+          "cwd": "apps/api-gateway"
         },
         "configurations": {
           "development": {
@@ -28,8 +28,8 @@
         "cache": true,
         "executor": "@nx/js:prune-lockfile",
         "outputs": [
-          "{workspaceRoot}/apps/fit-flow/dist/package.json",
-          "{workspaceRoot}/apps/fit-flow/dist/pnpm-lock.yaml"
+          "{workspaceRoot}/apps/api-gateway/dist/package.json",
+          "{workspaceRoot}/apps/api-gateway/dist/pnpm-lock.yaml"
         ],
         "options": {
           "buildTarget": "build"
@@ -41,7 +41,7 @@
         ],
         "cache": true,
         "outputs": [
-          "{workspaceRoot}/apps/fit-flow/dist/workspace_modules"
+          "{workspaceRoot}/apps/api-gateway/dist/workspace_modules"
         ],
         "executor": "@nx/js:copy-workspace-modules",
         "options": {
@@ -63,15 +63,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@fit-flow/fit-flow:build",
+          "buildTarget": "@fit-flow/api-gateway:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@fit-flow/fit-flow:build:development"
+            "buildTarget": "@fit-flow/api-gateway:build:development"
           },
           "production": {
-            "buildTarget": "@fit-flow/fit-flow:build:production"
+            "buildTarget": "@fit-flow/api-gateway:build:production"
           }
         }
       },
@@ -79,12 +79,6 @@
         "options": {
           "passWithNoTests": true
         }
-      },
-      "docker:build": {
-        "dependsOn": [
-          "build",
-          "prune"
-        ]
       }
     }
   },
