@@ -292,6 +292,14 @@ importers:
 
   apps/workout-service-e2e: {}
 
+  libs/auth: {}
+
+  libs/dto: {}
+
+  libs/events: {}
+
+  libs/kafka: {}
+
 packages:
 
   '@angular-devkit/core@19.2.23':

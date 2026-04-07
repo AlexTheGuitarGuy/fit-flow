@@ -32,6 +32,18 @@
     },
     {
       "path": "./apps/notification-service"
+    },
+    {
+      "path": "./libs/auth"
+    },
+    {
+      "path": "./libs/kafka"
+    },
+    {
+      "path": "./libs/dto"
+    },
+    {
+      "path": "./libs/events"
     }
   ]
 }
