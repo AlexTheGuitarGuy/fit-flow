@@ -74,9 +74,101 @@ services:
     networks:
       - fit-flow
 
+  user-db:
+    image: postgres:18.3-alpine
+    container_name: user-db
+    ports:
+      - 15432:5432
+    shm_size: 128mb
+    environment:
+      POSTGRES_DB: user
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U admin -d user']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - fit-flow
+    volumes:
+      - user-postgres-data:/var/lib/postgresql/data
+
+  workout-db:
+    image: postgres:18.3-alpine
+    container_name: workout-db
+    ports:
+      - 25432:5432
+    shm_size: 128mb
+    environment:
+      POSTGRES_DB: workout
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U admin -d workout']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - fit-flow
+    volumes:
+      - workout-postgres-data:/var/lib/postgresql/data
+
+  stats-db:
+    image: postgres:18.3-alpine
+    container_name: stats-db
+    ports:
+      - 35432:5432
+    shm_size: 128mb
+    environment:
+      POSTGRES_DB: stats
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U admin -d stats']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - fit-flow
+    volumes:
+      - stats-postgres-data:/var/lib/postgresql/data
+
+  notification-db:
+    image: postgres:18.3-alpine
+    container_name: notification-db
+    ports:
+      - 45432:5432
+    shm_size: 128mb
+    environment:
+      POSTGRES_DB: notification
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U admin -d notification']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - fit-flow
+    volumes:
+      - notification-postgres-data:/var/lib/postgresql/data
+
 networks:
   fit-flow:
     driver: bridge
 
 volumes:
   kafka-data:
+  user-postgres-data:
+  workout-postgres-data:
+  stats-postgres-data:
+  notification-postgres-data:
