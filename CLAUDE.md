@@ -159,9 +159,30 @@ nx affected:test
 
 ---
 
+## Planned: GraphQL Migration (post TICKET-042)
+
+After all current tickets are complete, the API Gateway will be migrated from REST to GraphQL using `@nestjs/graphql` (code-first).
+
+**Scope of change:**
+- `api-gateway` — replace REST controllers with GraphQL resolvers
+- `libs/dto` — add `@InputType()` / `@Field()` decorators (additive; class-validator decorators stay)
+- `libs/auth` — minor tweak to extract the current user from GraphQL context instead of HTTP request
+
+**Not affected by the migration:**
+- All downstream services (user, workout, stats, notification) — their internal REST endpoints stay as-is
+- All Kafka infrastructure (events, Avro schemas, producers, consumers)
+- Prisma schemas and migrations
+- Stats Service and Notification Service entirely (Kafka-only, no HTTP surface)
+- Redis, Docker Compose, observability stack, CI pipeline
+
+**Key constraint to preserve now:** keep the Gateway thin — pure routing and auth, zero business logic. This makes the migration surgical rather than a rewrite.
+
+---
+
 ## Key Reminders
 
 - This is a **learning project** — favour clarity over cleverness
 - Always register Avro schemas before producing events
 - Keep domain logic thin; the interesting complexity is in the infrastructure
 - When in doubt, check `libs/` before writing something new in a service
+- Keep the API Gateway thin (routing + auth only) — it will be migrated to GraphQL after current tickets
