@@ -6,3 +6,9 @@ lint-all-backend:
 
 precommit-all:
 	nx run-many -t build lint test -p api-gateway notification-service stats-service user-service workout-service
+
+infra-up:
+	docker compose -f local-infra/docker-compose.yml up -d
+
+infra-down:
+	docker compose -f local-infra/docker-compose.yml down
