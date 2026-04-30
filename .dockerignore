@@ -1,0 +1,12 @@
+node_modules
+.git
+.env
+.env.*
+.nx
+coverage
+**/*.spec.ts
+**/*.spec.js
+**/*.test.ts
+**/*.test.js
+docker-compose*.yml
+*.md

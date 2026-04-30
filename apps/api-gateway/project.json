@@ -1,0 +1,12 @@
+{
+  "targets": {
+    "docker:build": {
+      "executor": "nx:run-commands",
+      "dependsOn":[ "prune"],
+      "options": {
+        "command": "docker build -f apps/api-gateway/Dockerfile .",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  }
+}
